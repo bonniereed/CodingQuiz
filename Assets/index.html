@@ -4,40 +4,53 @@
     <title>CSS Box Styling</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css" />
   </head>
   <body>
     <header>
-      <div class= "large-font">Word Guess Game</div>
+      <div class= "large-font"id="large-notice">Coding Quiz</div>
       <button class="start-button">Start</button>
-      <button class="stop-button">Stop</button
-    </header>
+      <button class="start-button"id="reset-button">Reset</button>
+      <h1 class="questions"id="questionArea">Questions</h1>
+      </header>
 
     <main>
-      <section>
-        <div class="card word-guess">
-          <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
-        </div>
+        <section class="multipleChoice">
+          <button class="choices" id="choiceA">A.</button>
+          <button class="choices" id="choiceB">B.</button>
+          <button class="choices" id="choiceC">C.</button>
+          <button class="choices" id="choiceD">D.</button>
       </section>
       <section>
-        <div class="card results">
-          <div class = "win-loss-container">
+        <div class="card results"id="results">
+          <div class = "score-container">
           <div>
-          <h2>Wins: <span class="win">0 </span> </h2>
-          <h2>Losses: <span class="lose">0</span></h2>
+          <h2>Score: <span class="score"id="score">0</span> </h2>
         </div>
-          <button class="reset-button">Reset Score</button>
+          <button class="reset-button"> Submit</button>
       </div>
           <div class= "card timer">
             <div class = "timer-text">
-            <div class="large-font timer-count">20</div>
+            <div class="large-font timer-count">60</div>
             <h3>seconds remaining</h3>
           </div>
         
           </div>
         </div>
       </section>
+      <section>
+      <form>
+        <ul class="card"id="form">
+          <li>
+            <textarea id="Initials:" name="comments">Initials</textarea>
+          </li>
+          <li>
+            <label for="score" id="finalScore">Score</label>
+          </li>
+        <button id="save">SAVE</button>
+      </form> 
+    </section>
     </main>
-    <script src="assets/js/script.js"></script>
+    <script src="./JS/script.js"></script>
   </body>
 </html>
