@@ -13,13 +13,14 @@ var notice = document.querySelector("#large-notice")
 var questionArea = document.querySelector("#questionArea");
 var submitScore =document.querySelector(".save");
 var studentInitials = document.querySelector("#initials");
-var finalScore = document.querySelector("#finalScore")
-var save = document.querySelector(".save")
+var finalScore = document.querySelector("#finalScore");
+var save = document.querySelector("#save");
 var timer;
 var timerCount = 60;
 var questionNum = 0;
 var scoreVal = 0;
-console.log(`scoreVal is ${scoreVal} and questionNum is ${questionNum}`)
+
+console.log(`init: scoreVal is ${scoreVal} and questionNum is ${questionNum}`)
 
 
 // Array of words the user will guess
@@ -83,14 +84,14 @@ var questions = [
   {
     "questionText": "Which HTML tag is used to define an internal style sheet?",
     "answerValue": "D",
-    "choiceA": "<attribute>",
-    "choiceB": "<script",
-    "choiceC": "<css>",
-    "choiceD": "<style>"
+    "choiceA": "&lt;attribute&gt;",
+    "choiceB": "&lt;script&gt;",
+    "choiceC": "&lt;css&gt;",
+    "choiceD": "&lt;style&gt;"
   },
   {
     "questionText": "Which HTML attribute is used to define inline styles?",
-    "answerValue": "D",
+    "answerValue": "B",
     "choiceA": "styles",
     "choiceB": "style",
     "choiceC": "font",
@@ -182,7 +183,7 @@ function saveLastGrade() {
     initials: initials.value,
     score: finalScore.value,
   };
-
+}
   function renderLastGrade() {
     // Use JSON.parse() to convert text to JavaScript object
     var lastGrade = JSON.parse(localStorage.getItem("finalScore"));
@@ -212,4 +213,3 @@ choiceA.addEventListener("click", function(){checkAnswer("A")});
 choiceB.addEventListener("click", function(){checkAnswer("B")});
 choiceC.addEventListener("click", function(){checkAnswer("C")});
 choiceD.addEventListener("click", function(){checkAnswer("D")});
-}
