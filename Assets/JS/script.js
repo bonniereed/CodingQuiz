@@ -14,11 +14,15 @@ var questionArea = document.querySelector("#questionArea");
 var submitScore =document.querySelector(".save");
 var studentInitials = document.querySelector("#initials");
 var finalScore = document.querySelector("#finalScore");
+var actualTime = document.querySelector("actualTime")
 var save = document.querySelector("#save");
+var form = document.querySelector("#form");
 var timer;
 var timerCount = 60;
 var questionNum = 0;
 var scoreVal = 0;
+
+form.setAttribute("style", "visibility:hidden");
 
 console.log(`init: scoreVal is ${scoreVal} and questionNum is ${questionNum}`)
 
@@ -125,12 +129,15 @@ function checkAnswer(buttonPressed) {
       scoreVal++;
       questionNum++;
       setStage();
-    }
-  }else {
+    }else {
     console.log(`Check Answer Block 2: scoreVal is ${scoreVal} and questionNum is ${questionNum}`)
-    totalScore();
+    timerCount - 100 ;
+    questionNum++;
+    setStage();
+  }
   }
 }
+
 
 // The startGame function is called when the start button is clicked
 function startGame() {
@@ -164,6 +171,8 @@ function startTimer() {
   }, 1000);
 }
 
+
+
 function disableButtons() {
   choiceA.disabled = true;
   choiceB.disabled = true;
@@ -176,29 +185,12 @@ function enableButtons() {
   choiceC.disabled = false;
   choiceD.disabled = false;
 }
-
-function saveLastGrade() {
-  // Save related form data as an object
-  var studentGrade = {
-    initials: initials.value,
-    score: finalScore.value,
-  };
-}
-  function renderLastGrade() {
-    // Use JSON.parse() to convert text to JavaScript object
-    var lastGrade = JSON.parse(localStorage.getItem("finalScore"));
-    // Check if data is returned, if not exit out of the function
-    if (lastGrade !== null) {
-    document.getElementById("initials").innerHTML = lastGrade.student;
-    document.getElementById("finalScore").innerHTML = lastGrade.grade;
-    } else {
-      return;
-    }
-  }
+// submitScore.addEventListener('click', function){
+//   localStorage.setItem(form)
+// }
   
   save.addEventListener("click", function(event) {
   event.preventDefault();
-  saveLastGrade();
   renderLastGrade();
   });
 
