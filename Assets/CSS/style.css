@@ -121,6 +121,13 @@ section {
 .timer-text {
   padding: 55px;
 }
+li {
+  list-style-type: none;
+}
+
+.submit {
+  font-weight: 400;
+}
 
 #form {
   display: flex;
