@@ -214,7 +214,7 @@ function localSave() {
 //function that uses input to store local data including total score and initials
 function setLocalStorage(event) {
   event.preventDefault();
-  localStorage.setItem("Score", scoreVal);
+  localStorage.setItem("Correct answers", scoreVal);
   localStorage.setItem("Initials", document.getElementById("initials").value);
 }
 
