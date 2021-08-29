@@ -25,8 +25,6 @@ var scoreVal = 0;
 //Hides form data until end of quiz
 form.setAttribute("style", "visibility:hidden");
 
-console.log(`init: scoreVal is ${scoreVal} and questionNum is ${questionNum}`);
-
 // Array of questions and answers
 var questions = [
   {
@@ -120,12 +118,10 @@ function setStage() {
   choiceD.innerHTML = questions[questionNum].choiceD;
   questionArea.innerHTML = questions[questionNum].questionText;
   score.innerHTML = scoreVal;
-  console.log(
-    `Set Stage: scoreVal is ${scoreVal} and questionNum is ${questionNum}`
-  );
 }
 //function to fill question and answer boxes and prompts user to submit their score!
 function gameOver() {
+  disableButtons();
   choiceA.innerHTML = "🧁";
   choiceB.innerHTML = "🧁";
   choiceC.innerHTML = "🧁";
@@ -143,17 +139,11 @@ function checkAnswer(buttonPressed) {
   if (questionNum < questions.length) {
     //if statement that validates whether the answer is correct increments the score value and moves on the the next question.
     if (questions[questionNum].answerValue === buttonPressed) {
-      console.log(
-        `Check Answer Block 1: scoreVal is ${scoreVal} and questionNum is ${questionNum}`
-      );
       scoreVal++;
       questionNum++;
       setStage();
       //else statement that validates whether the answer is incorrect and subtracts 10 seconds from the timer and moves on to the next question.
     } else {
-      console.log(
-        `Check Answer Block 2: scoreVal is ${scoreVal} and questionNum is ${questionNum}`
-      );
       questionNum++;
       setStage();
     }
@@ -162,9 +152,6 @@ function checkAnswer(buttonPressed) {
     if (questions[questionNum - 1].answerValue === buttonPressed) {
       scoreVal++;
       gameOver();
-      console.log(
-        `Check Answer Block 3: scoreVal is ${scoreVal} and questionNum is ${questionNum}`
-      );
     } else {
       gameOver();
     }
@@ -173,10 +160,6 @@ function checkAnswer(buttonPressed) {
 
 // The startGame function is called when the start button is clicked
 function startGame() {
-  console.log(
-    `Start Game: scoreVal is ${scoreVal} and questionNum is ${questionNum}`
-  );
-  // enableButtons();
   startTimer();
   // Prevents start button from being clicked when round is in progress
   // startButton.disabled = true;
