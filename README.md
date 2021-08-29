@@ -9,4 +9,5 @@ Here is the link to the github page:
 https://bonniereed.github.io/CodingQuiz/
 
 Here is a screenshot of the project:
-![website screenshot](https://user-images.githubusercontent.com/46511972/131199513-40450bb7-26a1-4455-abc0-5ce2e487ac4a.png)
+<img width="629" alt="website screenshot" src="https://user-images.githubusercontent.com/46511972/131267658-32b34527-9707-4142-94a1-142ff182e3bf.png">
+
